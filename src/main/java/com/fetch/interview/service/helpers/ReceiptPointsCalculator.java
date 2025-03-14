@@ -46,7 +46,7 @@ public class ReceiptPointsCalculator {
         BigDecimal total = new BigDecimal(receipt.getTotal());
         points += Util.isRoundDollar(total) ? ROUND_DOLLAR_INCENTIVE : 0;
         points += Util.isMultipleOfQuarters(total) ? MULTIPLE_OF_QUARTER_INCENTIVE : 0;
-        points += (long)ITEM_SIZE_INCENTIVE * receipt.getItems().size() / 2;
+        points += (long)ITEM_SIZE_INCENTIVE * (receipt.getItems().size() / 2);
         points += calculatePointsForItemDescription(receipt);
         points += receipt.getPurchaseDate().getDayOfMonth() % 2 == 1 ? ODD_PURCHASE_DATE_INCENTIVE : 0;
         points += Util.isTimeHourInRange(receipt.getPurchaseTime(),
