@@ -21,7 +21,7 @@ A Spring Boot application that processes receipts and calculates reward points b
 4. Run the Docker container:
 
    ```
-   docker run -p 8080:8080 receipt-processor
+   docker run --rm -p 8080:8080 receipt-processor
    ```
 5. The API will be available at:
 
@@ -126,3 +126,14 @@ The `main` module is further split into these packages:
 Some other important files in the source code are:
 1. `Dockerfile` - The script to build a Docker Image for the app.
 2. `build.gradle` - The build configuration file for Gradle, which specifies the dependencies and build tasks.
+
+## Cleanup
+
+Once the code is run and the API is validated, the docker container and the image can be removed. This can be done by running the following commands:
+
+1. Stop the code running in the container by pressing `Control + C`. This will terminate the SpringBoot application and 
+remove the docker container since we ran the `docker run` command with the `--rm` flag. 
+2. Remove the Docker Image by running this command:
+   ```bash
+   docker rmi receipt-processor
+   ```
