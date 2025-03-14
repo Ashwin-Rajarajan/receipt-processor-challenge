@@ -6,6 +6,7 @@ import com.fetch.interview.utils.Util;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalTime;
 
 /**
  * Maintaining separate classes to handle longer calculations maintains readability in the service classes as the
@@ -23,8 +24,8 @@ public class ReceiptPointsCalculator {
     public static final int ODD_PURCHASE_DATE_INCENTIVE = 6;
     public static final int TIME_OF_PURCHASE_INCENTIVE = 10;
 
-    public static final int INCENTIVE_TIME_OF_PURCHASE_BEGIN = 14;
-    public static final int INCENTIVE_TIME_OF_PURCHASE_END = 16;
+    public static final LocalTime INCENTIVE_TIME_OF_PURCHASE_BEGIN = LocalTime.parse("14:00");
+    public static final LocalTime INCENTIVE_TIME_OF_PURCHASE_END = LocalTime.parse("16:00");
 
     /**
      * Rules for calculating points: <ul>
