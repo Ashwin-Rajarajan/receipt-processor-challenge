@@ -1,6 +1,6 @@
 # Receipt Processing Service
 
-A Spring Boot application that processes receipts and calculates reward points based on ceratin criteria.
+A Spring Boot application that processes receipts and calculates reward points based on certain criteria.
 
 ## Running the code
 1. Clone the repository(Using SSH):
@@ -107,3 +107,22 @@ Note that this will cause the build to fail in case any test case fails.
 
 (Unless the code is modified, the test cases will not fail as they have been validated before uploading
 the code to the repository).
+
+## Package Structure
+
+The code is structured to follow Best Practices in Spring Boot, to ensure clean separation and to enhance maintainability.
+The `src` is split into two modules: `main` and `test`. `main` has the logic and classes for the Application code while `test` has test cases to validate the code.
+
+The `main` module is further split into these packages:
+1. `api` - Contains the Controllers (classes responsible for handling HTTP requests and defining API endpoints).
+2. `dto` - Contains the Data Transfer Objects for transferring data.
+   1. `request` - DTOs related to HTTP requests.
+   2. `response` - DTOs related to HTTP responses.
+3. `model` - Holds the Database Models or the Data Access Objects(DAO).
+4. `repository` - These classes interact with the Databases (or in-memory data stores).
+5. `service` - The classes that actually handle business logic.
+6. `utils` - Utility classes and Helper functions.
+
+Some other important files in the source code are:
+1. `Dockerfile` - The script to build a Docker Image for the app.
+2. `build.gradle` - The build configuration file for Gradle, which specifies the dependencies and build tasks.
