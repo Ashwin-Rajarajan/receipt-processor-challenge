@@ -1,4 +1,4 @@
-package com.fetch.interview.dto;
+package com.fetch.interview.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.Valid;
@@ -13,6 +13,15 @@ import java.util.List;
 
 @Data
 public class Receipt {
+    @Data
+    public static class Item {
+
+        @NotNull @Pattern( regexp = "^[\\w\\s\\-]+$")
+        private String shortDescription;
+
+        @NotNull @Pattern( regexp = "^\\d+\\.\\d{2}$")
+        private String price;
+    }
 
     @NotNull @Pattern( regexp = "^[\\w\\s\\-&]+$")
     private String retailer;
