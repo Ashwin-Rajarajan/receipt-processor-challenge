@@ -26,7 +26,7 @@ A Spring Boot application that processes receipts and calculates reward points b
 5. The API will be available at:
 
    ```
-   http://localhost:8080
+   http://http://127.0.0.1:8080
    ```
 
 ## APIs
@@ -85,7 +85,7 @@ A Spring Boot application that processes receipts and calculates reward points b
     4. Sample CURL:
 
         ```curl 
-           curl --location 'localhost:8080/receipts/b28ded36-3f46-4afe-9eb1-1f763d880587/points'
+           curl --location 'http://127.0.0.1:8080/receipts/b28ded36-3f46-4afe-9eb1-1f763d880587/points'
         ```
     5. Returns: The Points awarded to the Receipt corresponding to the ID(HTTP 200) if the receipt ID is valid. An error message(HTTP 404) if no such ID exists.
     6. Success Response Example:
