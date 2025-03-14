@@ -3,6 +3,7 @@
 A Spring Boot application that processes receipts and calculates reward points based on certain criteria.
 
 ## Running the code
+Before running the code, please make sure that no other application is running on port 8080 in your system as that will be the port this application will bind to.
 1. Clone the repository(Using SSH):
 
    ```
